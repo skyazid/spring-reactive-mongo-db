@@ -16,7 +16,7 @@ public class ReactiveMongoDbApplication {
         Delete all data and reinsert it each time the application is started
     */
     @Bean
-    CommandLineRunner employees(Repository repository) {
+    CommandLineRunner init(Repository repository) {
         return args -> repository
                 .deleteAll()
                 .subscribe(null, null, () ->
